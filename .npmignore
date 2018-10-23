@@ -1,0 +1,28 @@
+# repeats from .gitignore
+/node_modules/
+.DS_Store
+Thumbs.db
+desktop.ini
+.npm
+*.iml
+.idea
+*.swp
+*.pyc
+.vscode
+package-lock.json
+yarn.lock
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# other
+/docs
+/examples
+.appveyour.yml
+.cirrus.yml
+.editorconfig
+.eslintignore
+.eslintrc.js
+.travis.yml
+README.md
+results
