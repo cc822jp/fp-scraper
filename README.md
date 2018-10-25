@@ -19,7 +19,7 @@ npm i fp-scraper
 #### (1) Basic Usage
 
 ```js
-const FpScraper = require('../../fp-scraper');
+const FpScraper = require('fp-scraper');
 
 (async() => {
   const scraper = new FpScraper({
@@ -33,7 +33,7 @@ const FpScraper = require('../../fp-scraper');
 #### (2) Setting UID
 
 ```js
-const FpScraper = require('../../fp-scraper');
+const FpScraper = require('fp-scraper');
 
 (async() => {
   const scraper = new FpScraper({
@@ -48,7 +48,7 @@ const FpScraper = require('../../fp-scraper');
 #### (3) Setting Device
 
 ```js
-const FpScraper = require('../../fp-scraper');
+const FpScraper = require('fp-scraper');
 
 (async() => {
   const scraper = new FpScraper({
@@ -63,7 +63,7 @@ const FpScraper = require('../../fp-scraper');
 #### (4) Setting Callback
 
 ```js
-const FpScraper = require('../../fp-scraper');
+const FpScraper = require('fp-scraper');
 
 (async() => {
   const scraper = new FpScraper({
@@ -93,7 +93,7 @@ const FpScraper = require('../../fp-scraper');
 #### (5) Setting Puppeteer
 
 ```js
-const FpScraper = require('../../fp-scraper');
+const FpScraper = require('fp-scraper');
 
 (async() => {
   const scraper = new FpScraper({

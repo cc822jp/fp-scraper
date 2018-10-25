@@ -1,7 +1,7 @@
 {
   "name": "fp-scraper",
-  "version": "1.0.2",
-  "description": "",
+  "version": "1.0.3",
+  "description": "Scraping WebSite for Feature-Phone",
   "main": "index.js",
   "scripts": {
     "test": "run-s format lint",
