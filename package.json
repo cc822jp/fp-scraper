@@ -17,8 +17,8 @@
   },
   "lint-staged": {
     "*.js": [
-      "prettier --write './**/*.js'",
-      "eslint --fix",
+      "npm run format:prettier --",
+      "npm run format:eslint --",
       "git add"
     ]
   },
