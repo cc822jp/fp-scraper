@@ -19,6 +19,7 @@
     "*.js": [
       "npm run format:prettier --",
       "npm run format:eslint --",
+      "npm run lint --",
       "git add"
     ]
   },

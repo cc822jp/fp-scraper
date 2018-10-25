@@ -1,11 +1,9 @@
 const scraper = require('../../fp-scraper');
 
-(async () => {
+(async() => {
   // ./results/screenshot に結果格納
   await scraper({
-    urls: [
-      'http://k.nhk.jp/'
-    ]
+    urls: ['http://k.nhk.jp/']
   });
 
   // UID, callbackの設定
