@@ -18,6 +18,7 @@ yarn-error.log*
 # other
 /docs
 /examples
+.github
 .appveyour.yml
 .cirrus.yml
 .editorconfig
