@@ -1,3 +1,3 @@
 const FpScraper = require('./lib/FpScraper');
 
-module.exports = options => new FpScraper(options);
+module.exports = FpScraper;

@@ -16,38 +16,64 @@ npm i fp-scraper
 
 ### Usage
 
-#### (1) Simple
+#### (1) Basic Usage
 
 ```js
-const scraper = require('fp-scraper');
+const FpScraper = require('../../fp-scraper');
 
-(async () => {
-  await scraper({
-    urls: [
-      'http://k.nhk.jp/'
-    ]
+(async() => {
+  const scraper = new FpScraper({
+    urls: ['http://k.nhk.jp/']
   });
+
+  await scraper.scrape();
 })();
 ```
 
-#### (2) Setting Options
+#### (2) Setting UID
 
 ```js
-const scraper = require('fp-scraper');
+const FpScraper = require('../../fp-scraper');
 
-(async () => {
-  // UID, callbackの設定
-  await scraper({
+(async() => {
+  const scraper = new FpScraper({
+    urls: ['http://k.nhk.jp/'],
+    uid: 'MY_CUSTOM_UID'
+  });
+
+  await scraper.scrape();
+})();
+```
+
+#### (3) Setting Device
+
+```js
+const FpScraper = require('../../fp-scraper');
+
+(async() => {
+  const scraper = new FpScraper({
+    urls: ['https://google.com'],
+    deviceName: 'PC-Wide'
+  });
+
+  await scraper.scrape();
+})();
+```
+
+#### (4) Setting Callback
+
+```js
+const FpScraper = require('../../fp-scraper');
+
+(async() => {
+  const scraper = new FpScraper({
     urls: [
       'http://k.nhk.jp/',
-      'http://k.nhk.jp/knews/',
-      'http://k.nhk.jp/knews/20181023/k10011682581000.html',
+      'http://gamba-osaka.jp/',
       'https://www.fujitv.co.jp/m/',
-      'https://www.fujitv.co.jp/ap2/timetable/Mdaily',
-      'http://www.ex-m.jp',
-      'http://www.ex-m.jp/?page=topics'
+      'http://onepieceportal.com/',
+      'http://www.ex-m.jp'
     ],
-    uid: 'testUid',
     outputDir: './results/screenshot/2018-01-01/',
     cbSuccess: url => {
       console.log(`Done: ${url}`);
@@ -55,9 +81,29 @@ const scraper = require('fp-scraper');
     cbError: url => {
       console.log(`Error: ${url}`);
     }
-  }).then(() => {
+  });
+
+  await scraper.scrape().then(() => {
     console.log('END');
   });
+})();
+```
+
+
+#### (5) Setting Puppeteer
+
+```js
+const FpScraper = require('../../fp-scraper');
+
+(async() => {
+  const scraper = new FpScraper({
+    urls: ['http://onepieceportal.com/', 'http://www.ex-m.jp'],
+    customPuppeteer: async(browser, page) => {
+      await page.setViewport({ width: 375, height: 1000 });
+    }
+  });
+
+  await scraper.scrape();
 })();
 ```
 
@@ -70,10 +116,20 @@ const scraper = require('fp-scraper');
 |serial|String|testSerial|FP端末の端末製造番号|
 |cbSuccess|Function|null|スクレイピング時callback(成功)|
 |cbError|Function|null|スクレイピング時callback(失敗)|
-|device|Object|{*}|デバイス情報|
+|deviceName|String|FP|デバイス名*1|
 |puppeteerOptions|Object|{*}|puppeteer設定値|
+|customPuppeteer|Function|null|Puppetterのカスタマイズ|
 |outputDir|String|./results/screenshot/|結果格納先|
 
+#### *1 Device List
+
+|Name|Description|
+|:---|:---|
+|FP|Softbank 930SH|
+|SP|iPhone 6|
+|PC|Chrome(モニタサイズ: 1024x768)|
+|PC-Wide|Chrome(モニタサイズ: 1920x1080)|
+ 
 ## License
 
 [MIT](http://opensource.org/licenses/MIT)
