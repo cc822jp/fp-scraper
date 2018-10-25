@@ -1,11 +1,10 @@
 # fp-scraper
 
- * FP(ガラケー)のスクレイピング
+ * フィーチャーフォン(ガラケー)のスクレイピング
  * UIDの設定とXMLパースエラーの回避
 
-|Example1|Example2|Example3|Example4|Example5|
-|:---:|:---:|:---:|:---:|:---:|
 |![Example1](docs/images/example1.png)|![Example2](docs/images/example2.png)|![Example3](docs/images/example3.png)|![Example4](docs/images/example4.png)|![Example5](docs/images/example5.png)|
+|:---:|:---:|:---:|:---:|:---:|
 
 ## Getting Started
 
